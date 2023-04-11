@@ -6,6 +6,9 @@ class Persona
     private $nombre;
     private $papellido;
     private $sapellido;
+    private $celular;
+    private $direccion;
+    private $fechanac;
     private $usuario;
     private $clave;
     private $con;
@@ -15,6 +18,9 @@ class Persona
         $this->nombre = "";
         $this->papellido = "";
         $this->sapellido = "";
+        $this->celular=0;
+        $this->direccion="";
+        $this->fechanac="";
         $this->usuario = "";
         $this->clave = "";
         $this->con = new conexionBase();
@@ -23,14 +29,7 @@ class Persona
     {
         $this->$nom = $valor;
     }
-    function prueba()
-    {
-        echo $this->nombre;
-        echo $this->papellido;
-        echo $this->sapellido;
-        echo $this->usuario;
-        echo $this->clave;
-    }
+
 
 //valida si el usuario existe
     function validar()
