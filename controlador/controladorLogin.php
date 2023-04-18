@@ -14,7 +14,7 @@ if ($data) {
     if (isset($data['pass']) && $data['pass']) {
         $pass = htmlspecialchars($data['pass']);
     } else{
-        echo json_encode(array('exito' => 0, 'msg' => 'No se envio el nick'));
+        echo json_encode(array('exito' => 0, 'msg' => 'No se envio el pass'));
         die();
     }
    

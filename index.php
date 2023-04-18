@@ -11,12 +11,14 @@
 <body>
     <div class="container mt-5 col-6">
         <form id="formLogin">
-        <div class="card">
-            <div class="card-header">
-                <center><h2>Inicio de sesion</h2></center>
-            </div>
-            <div class="card-body">
-                
+            <div class="card">
+                <div class="card-header">
+                    <center>
+                        <h2>Inicio de sesion</h2>
+                    </center>
+                </div>
+                <div class="card-body">
+
                     <div class="form-floating mb-3">
                         <input type="usuario" class="form-control" name="usuario" id="usuario" placeholder="usuario">
                         <label for="floatingInput">Usuario</label>
@@ -25,43 +27,42 @@
                         <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
                         <label for="pass">Password</label>
                     </div>
-                
+
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary" type="submit">Iniciar Sesion</button>
+                    <a class="btn btn-secondary" href="/registro.php">Registrarse</a>
+                </div>
             </div>
-            <div class="card-footer">
-                <button class="btn btn-primary" type="submit">Iniciar Sesion</button>
-                <a class="btn btn-secondary" href="/registro.php">Registrarse</a>
-            </div>
-        </div>
         </form>
     </div>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<script
-  src="https://code.jquery.com/jquery-3.6.4.js"
-  integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 
 <script>
     $(document).ready(function() {
-  $('#formLogin').on('submit', function(e){
-    e.preventDefault();
-    // validation code here
-   var usuario=$('#usuario').val();
-   var pass=$('#pass').val();
-   var datos={
-    'usuario':usuario,
-    'pass':pass
-   }
-    $.ajax(
-        {url: "controlador/controladorLogin.php",
-            type:'POST',
-            data:datos,
-             success: function(result){
-                var datos=JSON.parse(result);
-   console.log(datos.mensaje);
-  }});
-  });
-});
+        $('#formLogin').on('submit', function(e) {
+            e.preventDefault();
+            // validation code here
+            var usuario = $('#usuario').val();
+            var pass = $('#pass').val();
+            var datos = {
+                'nick': usuario,
+                'pass': pass
+            }
+            $.ajax({
+                url: "controlador/controladorLogin.php",
+                type: 'POST',
+                data: JSON.stringify(datos),
+                success: function(result) {
+                    var resp = JSON.parse(result);
+                    alert(resp.msg);
+                }
+            });
+        });
+    });
 </script>
+
 </html>
