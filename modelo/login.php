@@ -29,7 +29,7 @@ class Login
          if ($re > 0) {
             $res=password_verify($this->pass,$da['pass']);
             if($res){
-                echo json_encode(array('exito' => 1,'data'=>$da),JSON_UNESCAPED_UNICODE);
+                echo json_encode(array('exito' => 1,'data'=>$da,'msg'=>'Bienvenido'),JSON_UNESCAPED_UNICODE);
             }
             else {
                 echo json_encode(array('exito' =>0,'msg'=>'Clave incorrecta'));
