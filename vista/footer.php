@@ -3,6 +3,7 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- The javascript plugin to display page loading on top-->
     <script src="js/plugins/pace.min.js"></script>
     <!-- Page specific javascripts-->
@@ -64,6 +65,14 @@
       	ga('create', 'UA-72504830-1', 'auto');
       	ga('send', 'pageview');
       }
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+          var nombreRaiz=sessionStorage.getItem("nombre");
+           var papellidoRaiz=sessionStorage.getItem("papellido");
+        $('#nombreRaiz').text(nombreRaiz +" "+papellidoRaiz);
+       
+    });
     </script>
   </body>
 </html>
