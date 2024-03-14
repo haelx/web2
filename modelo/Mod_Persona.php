@@ -34,7 +34,9 @@ class Persona
         $resp=$this->con->ExecuteQuery($sql);
         $aux=$this->con->GetCountAffectedRows($resp);
         if($aux>0){
-            echo "La persona ya esta registrada";
+            $_SESSION['error']=1;
+            $_SESSION['mensaje']="La persona ya se encuentra registrada";
+            header("Location: ../vista");
         }else{
             $this->registrarPersona();
         }
@@ -46,6 +48,7 @@ class Persona
         $sql = "insert into persona(nombre,papellido,sapellido,celular,direccion,fechanac)
 values ('$this->nombre','$this->papellido','$this->sapellido','$this->celular','$this->direccion','$this->fechanac')";
         $resp = $this->con->ExecuteQuery($sql);
+        header("Location: ../vista");
     }
 
 

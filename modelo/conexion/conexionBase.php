@@ -8,7 +8,8 @@ if ($method == "OPTIONS") {
     die();
 }
 session_start();
-$_SESSION['nombre']="";
+$_SESSION['nombre']="hola";
+$_SESSION['error']=0;
 class conexionBase{
 // Definicion de atributos
     private $host;
