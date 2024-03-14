@@ -3,4 +3,4 @@
 define('HOST', 'localhost');
 define('USER', 'root');
 define('PASSWORD', '');
-define('DATABASE', 'baseWeb2');
+define('DATABASE', 'mydb');
