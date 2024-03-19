@@ -69,5 +69,19 @@
       	return false;
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
+<?php
+session_start();
+if(isset($_SESSION['error']) and $_SESSION['error']==1){
+    $mensaje=$_SESSION['mensaje'];
+    echo "golasdasda";
+    echo "<script>
+Swal.fire({
+  title: 'Credenciales',
+  text: '$mensaje',
+  icon: 'error'
+});
+</script>";
+}

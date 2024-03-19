@@ -34,7 +34,9 @@ class Login
 
 
         }else{
-            echo "Error de credencial";
+            $_SESSION['error']=1;
+            $_SESSION['mensaje']="Error de credenciales";
+            header("Location: ../vista/page-login.php");
         }
     }
 
