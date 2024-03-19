@@ -1,3 +1,6 @@
+<?php
+@session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -86,7 +89,7 @@
     <aside class="app-sidebar">
       <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User Image">
         <div>
-          <p class="app-sidebar__user-name">John Doe</p>
+          <p class="app-sidebar__user-name"><?php echo isset($_SESSION['nombre'])?></p>
           <p class="app-sidebar__user-designation">Frontend Developer</p>
         </div>
       </div>

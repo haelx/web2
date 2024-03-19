@@ -22,12 +22,13 @@ class Login
     function validar()
     {
         $this->con->CreateConnection();
-        $sql="select * from Usuario where nick='$this->usuario' and pass='$this->pass'";
+        $sql="select * from Usuario u join Persona p on p.idPersona=u.Persona_idPersona where nick='$this->usuario' and pass='$this->pass'";
         $resp=$this->con->ExecuteQuery($sql);
         if($row=mysqli_fetch_assoc($resp)){
             $_SESSION['nick']=$row['nick'];
             $_SESSION['pass']=$row['pass'];
             $_SESSION['idUsuario']=$row['idUsuario'];
+            $_SESSION['nombre']=$row['nombre'];
             $this->con->SetFreeResult($resp);
             $this->con->CloseConnection();
             header("Location: ../vista/dashboard.php");
