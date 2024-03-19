@@ -21,7 +21,21 @@ class Login
 
     function validar()
     {
-        echo $this->usuario. "  ------    ". $this->pass;
+        $this->con->CreateConnection();
+        $sql="select * from Usuario where nick='$this->usuario' and pass='$this->pass'";
+        $resp=$this->con->ExecuteQuery($sql);
+        if($row=mysqli_fetch_assoc($resp)){
+            $_SESSION['nick']=$row['nick'];
+            $_SESSION['pass']=$row['pass'];
+            $_SESSION['idUsuario']=$row['idUsuario'];
+            $this->con->SetFreeResult($resp);
+            $this->con->CloseConnection();
+            header("Location: ../vista/dashboard.php");
+
+
+        }else{
+            echo "Error de credencial";
+        }
     }
 
 }
