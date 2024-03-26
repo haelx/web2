@@ -1,14 +1,12 @@
 <?php
 require_once "conexion/conexionBase.php";
-
 class Persona
 {
     private $nombre;
     private $papellido;
     private $sapellido;
-    private $celular;
-    private $direccion;
-    private $fechanac;
+    private $carnet;
+    private $email;
     private $con;
 
     function __construct()
@@ -16,9 +14,8 @@ class Persona
         $this->nombre = "";
         $this->papellido = "";
         $this->sapellido = "";
-        $this->celular = 0;
-        $this->direccion = "";
-        $this->fechanac = "0000-00-00";
+        $this->carnet = 0;
+        $this->email = "";
         $this->con = new conexionBase();
     }
 
@@ -34,9 +31,11 @@ class Persona
         $resp=$this->con->ExecuteQuery($sql);
         $aux=$this->con->GetCountAffectedRows($resp);
         if($aux>0){
+            session_start();
             $_SESSION['error']=1;
             $_SESSION['mensaje']="La persona ya se encuentra registrada";
             header("Location: ../vista");
+            exit();
         }else{
             $this->registrarPersona();
         }
@@ -45,11 +44,10 @@ class Persona
     function registrarPersona()
     {
         $this->con->CreateConnection();
-        $sql = "insert into persona(nombre,papellido,sapellido,celular,direccion,fechanac)
-values ('$this->nombre','$this->papellido','$this->sapellido','$this->celular','$this->direccion','$this->fechanac')";
+        $sql = "insert into persona(nombre,papellido,sapellido,carnet,email) values ('$this->nombre','$this->papellido','$this->sapellido','$this->carnet','$this->email')";
         $resp = $this->con->ExecuteQuery($sql);
         header("Location: ../vista");
+        exit();
     }
-
-
 }
+?>

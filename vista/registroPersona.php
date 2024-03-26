@@ -31,16 +31,12 @@ include_once "menu.php";
                             <input class="form-control" type="text" placeholder="Ingrese su segundo apellido" name="sapellido">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Celular:</label>
-                            <input class="form-control" type="number" placeholder="Ingrese su numero de celular" name="celular">
+                            <label class="form-label">Carnet:</label>
+                            <input class="form-control" type="number" placeholder="Ingrese su numero de carnetr" name="carnet">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Direccion:</label>
-                            <input class="form-control" type="text" placeholder="Ingrese su direccion de su domicilio" name="direccion">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Fecha de Nacimiento:</label>
-                            <input class="form-control" type="date" placeholder="fecha" name="fechanac">
+                            <label class="form-label">Email:</label>
+                            <input class="form-control" type="text" placeholder="Ingrese su direccion de correo electronico" name="email">
                         </div>
                         <div class="tile-footer">
                             <button class="btn btn-primary"type="submit"><i class="bi bi-check-circle-fill me-2"></i>Registrar</button>&nbsp;&nbsp;&nbsp;
