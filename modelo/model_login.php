@@ -23,7 +23,7 @@ class Login
     function validar()
     {
         $this->con->CreateConnection();
-        $sql="select * from usuario where username='$this->username' and password='$this->password'";
+        $sql="select * from usuario where username='$this->username' and pass='$this->password'";
         //$sql="select * from Usuario u join Persona p on p.idPersona=u.Persona_idPersona where nick='$this->usuario' and pass='$this->password'";
         $resp=$this->con->ExecuteQuery($sql);
         if($row=mysqli_fetch_assoc($resp)){
