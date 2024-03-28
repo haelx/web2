@@ -30,7 +30,7 @@ class Login
             $_SESSION['username']=$row['username'];
             $_SESSION['password']=$row['password'];
             $_SESSION['id_persona']=$row['id_persona'];
-           $_SESSION['nombre']=$row['nombre'];
+            $_SESSION['nombre']=$row['nombre'];
             $this->con->SetFreeResult($resp);
             $this->con->CloseConnection();
             header("Location: ../vista/dashboard.php");
