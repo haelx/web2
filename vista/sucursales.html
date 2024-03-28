@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="eS">
   <head>
@@ -86,7 +87,7 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="images/imagen3.jpeg" alt="User Image">
+      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="images/ee713532b1ff93150cd19098d1fd4793.jpg" alt="User Image">
         <div>
           <p class="app-sidebar__user-name">INFOCAL</p>
           <p class="app-sidebar__user-designation">Quinto Semestre</p>
@@ -140,10 +141,50 @@
         </div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item"><a href="#">INICIO</a></li>
+          <li class="breadcrumb-item"><a href="cabecera.php">INICIO</a></li>
         </ul>
       </div>
-      <img src="images/imagen4.jpeg" alt="" srcset="">
+      <main class="app-content">
+        <div class="app-title">
+            <div>
+                <h1><i class="bi bi-speedometer"></i> Registro Sucursales</h1>
+                <p>Llenado de datos de los sucursales</p>
+            </div>
+            <ul class="app-breadcrumb breadcrumb">
+                <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="tile">
+                <h3 class="tile-title">Registro de Sucursal</h3>
+                <div class="tile-body">
+                    <form action="../controlador/ct_persona.php" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">direccion:</label>
+                            <input required class="form-control" type="text" placeholder="Ingrese direccion" name="direccion">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">NIT:</label>
+                            <input required class="form-control" type="text" placeholder="Ingrese el NIT" name="nit">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">sufijo:</label>
+                            <input class="form-control" type="text" placeholder="Ingrese el sufijo" name="sufijo">
+                        </div>
+                        <div class="tile-footer">
+                            <button class="btn btn-primary"type="submit"><i class="bi bi-check-circle-fill me-2"></i>Registrar</button>&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-warning" type="reset"><i class="bi bi-check-circle-fill me-2"></i>Limpiar</button>
+                            &nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="#"><i class="bi bi-x-circle-fill me-2"></i>Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
       <div class="row">
         <div class="col-md-6 col-lg-3">
 
