@@ -20,15 +20,13 @@
 					<h2 class="heading-section">Iniciar Sesion</h2>
 				</div>
 			</div>
-            <form class="login-form" action="../controlador/controlador_login.php" method="post">
 			<div class="row justify-content-center">
-           
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">¿Ya tienes una cuenta?</h3>
 		      	<form action="#" class="signin-form">
 		      		<div class="form-group">
-		      			<input type="text" class="form-control" placeholder="Usuario" required name="username">
+		      			<input type="text" class="form-control" placeholder="Usuario" required name="usurname">
 		      		</div>
 	            <div class="form-group">
 	              <input id="password-field" type="password" name="password" class="form-control" placeholder="Contraseña" required>
@@ -60,30 +58,10 @@
 		</div>
 	</section>
 
-	<script src="js/jquery-3.7.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-    <script type="text/javascript">
-      // Login Page Flipbox control
-      $('.login-content [data-toggle="flip"]').click(function() {
-      	$('.login-box').toggleClass('flipped');
-      	return false;
-      });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
 
 	</body>
 </html>
-<?php
-session_start();
-if(isset($_SESSION['error']) and $_SESSION['error']==1){
-    $mensaje=$_SESSION['mensaje'];
-    echo "golasdasda";
-    echo "<script>
-Swal.fire({
-  title: 'Credenciales',
-  text: '$mensaje',
-  icon: 'error'
-});
-</script>";
-}

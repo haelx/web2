@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `almacen`
 --
+create database hamburgueseria;
+use hamburgueseria;
 
 CREATE TABLE `almacen` (
   `id_almacen` int(11) NOT NULL,
@@ -195,7 +197,7 @@ CREATE TABLE `sucursal` (
 CREATE TABLE `usuario` (
   `id_persona` int(11) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL
+  `pass` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -429,3 +431,12 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+insert into persona (nombre,papellido,sapellido,carnet,email) values ('Wills Alejandro','Mercado','','7932123','wills@gmail.com');
+
+select * from persona;
+
+insert into usuario (id_persona, username, pass) values (15,'admin','admin');
+
+drop table usuario;
+
