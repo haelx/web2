@@ -39,7 +39,7 @@ class Login
         }else{
 //            $_SESSION['error']=1;
 //            $_SESSION['mensaje']="Error de credenciales";
-          json_encode(array(
+          echo json_encode(array(
               "error"=>1,
               "exito"=>0,
               "mensaje"=>"Error de credenciales"
