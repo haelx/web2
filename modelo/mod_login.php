@@ -31,13 +31,19 @@ class Login
             $_SESSION['nombre']=$row['nombre'];
             $this->con->SetFreeResult($resp);
             $this->con->CloseConnection();
-            header("Location: ../vista/dashboard.php");
-
-
+            echo json_encode(array(
+                "error"=>0,
+                "exito"=>1,
+                "mensaje"=>"Bienvenido"
+            ));
         }else{
-            $_SESSION['error']=1;
-            $_SESSION['mensaje']="Error de credenciales";
-            header("Location: ../vista/page-login.php");
+//            $_SESSION['error']=1;
+//            $_SESSION['mensaje']="Error de credenciales";
+          json_encode(array(
+              "error"=>1,
+              "exito"=>0,
+              "mensaje"=>"Error de credenciales"
+          ));
         }
     }
 

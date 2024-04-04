@@ -1,11 +1,15 @@
 <?php
 include_once "../modelo/mod_login.php";
-if ($_POST) {
-    if (isset($_POST["usuario"]) and $_POST["usuario"]) {
-        $usuario=htmlspecialchars($_POST["usuario"]);
+$data=json_decode(file_get_contents
+    ("php://input")
+    ,true);
+
+if ($data) {
+    if (isset($data["usuario"]) and $data["usuario"]) {
+        $usuario=htmlspecialchars($data["usuario"]);
     }
-    if (isset($_POST["pass"]) and $_POST["pass"]) {
-        $pass=htmlspecialchars($_POST["pass"]);
+    if (isset($data["pass"]) and $data["pass"]) {
+        $pass=htmlspecialchars($data["pass"]);
     }
     $login=new Login();
     $login->asignar("usuario",$usuario);
