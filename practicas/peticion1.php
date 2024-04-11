@@ -5,21 +5,18 @@ $data=json_decode(file_get_contents
     ,true);
 
 if ($data){
-    if (isset($data['nombre'])){
+    if (isset($data['nombre']) && isset($data['edad'])){
         $nombre=$data['nombre'];
-    }else{
-        echo json_encode(array("mensaje"=>"falta el nombre"));
-    }
-    if (isset($data['edad'])){
         $edad=$data['edad'];
+        if($edad>=18){
+            echo json_encode(array("mensaje"=>"Bienvenido $nombre eres mayor de edad"));
+        }else{
+            echo json_encode(array("mensaje"=>"Bienvenido $nombre no eres mayor de edad"));
+        }
     }else{
-        echo json_encode(array("mensaje"=>"falta la edad"));
+        echo json_encode(array("mensaje"=>"falta nombre o edad"));
     }
-
-    if($edad>=18){
-        echo json_encode(array("mensaje"=>"Bienvenido $nombre eres mayor de edad"));
-    }else{
-        echo json_encode(array("mensaje"=>"Bienvenido $nombre no eres mayor de edad"));
-    }
+}else{
+    echo json_encode(array("mensaje"=>"No se envio datos"));
 }
 
